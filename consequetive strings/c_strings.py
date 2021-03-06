@@ -26,11 +26,14 @@ consecutive strings : follow one after another without an interruption
 """
 test1 = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"]
 test2 = ["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"]
+test3 = ["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"]
 k = 2
 
 def longest_consec(strarr,k) :
     outTab = []
-    for i in range(len(strarr)-1) :
+    if len(strarr) == 0 : return ""
+    if k > len(strarr) or k <= 0 : return ""
+    for i in range(len(strarr)-k+1) :
         s = ""
         for j in range(k) :
             s += strarr[i+j]
@@ -40,11 +43,9 @@ def longest_consec(strarr,k) :
     outStr = ""
     for p in outTab :
         if p[1] > maxL :
-            maxL = l
+            maxL = p[1]
             outStr = p[0]
-    print(maxL)
-    print(outTab)
     return outStr
 
+print(longest_consec(test3,3))
 print(longest_consec(test1,2))
-print(longest_consec(test2,2))
