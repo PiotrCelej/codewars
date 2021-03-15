@@ -19,21 +19,8 @@ Attention: If the number has leading zeros the amount of digits should be consid
 '''
 
 def stringIncrementer(strng) :
-    outTab = ["",""]
-    nums = "0123456789"
-    l_num = True
-    for i in reversed(strng) :
-        if i in nums and l_num :
-            outTab[1] = outTab[1] + i
-        else :
-            outTab[0] = outTab[0] + i
-            l_num = False
-    word = ""
-    nmbr = ""
-    for j in reversed(outTab[0]) :
-        word += j
-    for k in reversed(outTab[1]) :
-        nmbr +=k
+    word = strng.rstrip("0123456789")
+    nmbr = strng[len(word):]
     n=1
     if len(nmbr)>0 :
         n = str(int(nmbr)+1)
