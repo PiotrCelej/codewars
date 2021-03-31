@@ -1,9 +1,10 @@
 #rozkład liter w słowniku języka polskiego biorąc pod uwagę odmianę słów. Aplikacja ignoruje wielkość liter
+import traceback
 
 def countDistrLetters(f) :
     output = {}
 
-    file = open(f,'r')
+    file = open(f, encoding='utf-8')
     errCount = 0
     lineCount = 0
 
@@ -12,7 +13,7 @@ def countDistrLetters(f) :
             lineCount += 1
             for i in line :
                 j = i.lower()
-                if j in "1234567890 .,\n" :
+                if str(j) in "1234567890 .,\n" :
                     pass
                 else :
                     if j in output :
@@ -22,6 +23,7 @@ def countDistrLetters(f) :
     except :
         errCount += 1
         print("Error in reading a letter: ",errCount)
+        traceback.print_exc()
 
     print("Lines read:", lineCount)
     print(output)
@@ -30,4 +32,4 @@ def countDistrLetters(f) :
     return True
 
 if __name__ == "__main__" :
-    countDistrLetters('lettersDistribution/test.txt')
+    countDistrLetters('lettersDistribution/odm.txt')
