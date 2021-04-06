@@ -25,11 +25,8 @@ def countDistrLetters(f) :
         print("Error in reading a letter: ",errCount)
         traceback.print_exc()
 
-    print("Lines read:", lineCount)
-    print(output)
-
     file.close()
-    return True
+    return output
 
 if __name__ == "__main__" :
     countDistrLetters('lettersDistribution/odm.txt')
