@@ -29,3 +29,8 @@
 #Hint
 #Very often xk will be n-1.
 #
+
+def decompose(n) :
+    if n <=0 : return None
+    
+    pass
