@@ -32,5 +32,11 @@
 
 def decompose(n) :
     if n <=0 : return None
-    
+
+
+
     pass
+
+if __name__ == '__main__':
+    print(decompose(11))
+    print(decompose(50))
